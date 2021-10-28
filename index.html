@@ -9,16 +9,257 @@
     <meta name="description" content="사람들과 공유할 수 있는, 공간경험을 만듭니다.">
     <meta property="og:title" content="메가박스">
     <meta property="og:url" content="https://10dy10.github.io/megabox/">
-    <meta property="og:image" content="./images/og-image.jpg">
+    <meta property="og:image" content="https://10dy10.github.io/megabox/images/og-image.jpg">
     <meta property="og:description" content="사람들과 공유할 수 있는, 공간경험을 만듭니다.">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="메가박스">
     <meta name="twitter:url" content="https://10dy10.github.io/megabox/">
-    <meta name="twitter:image" content="./images/og-image.jpg">
+    <meta name="twitter:image" content="https://10dy10.github.io/megabox/images/twiter-card.jpg">
     <meta name="twitter:description" content="사람들과 공유할 수 있는, 공간경험을 만듭니다.">
     <title>MEET PLAY SHARE, 메가박스</title>
+
+    <!-- 스타일 -->
+        <!-- 파비콘 -->
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+        <!-- 리셋 -->
+    <link rel="stylesheet" href="./css/reset.css">
+        <!-- 스와이퍼 css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.2.0/swiper-bundle.min.css">
+        <!-- 아이콘폰트 폰트아썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- 스크립트 -->
+        <!-- 라이브러리 jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- 라이브러리 jquery cookie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <!-- 스와이퍼 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.2.0/swiper-bundle.min.js"></script>
+
+    <style>
+        /* 기본스타일 - 데스크탑 */
+            /* 웹폰트 Noto Sans KR */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+        :root{font-family:'Noto Sans KR', sans-serif;font-size:15px;font-weight:400;}
+        .wrap{overflow:hidden;}
+        .container{max-width:1100px;margin:0 auto;}
+        .btn-cls{
+            font-size:0;
+        }
+        .fas.fa-times{font-size:15px;color:#fff;}
+
+        /* SKIP NAV STYLE */
+        .skip-nav a{
+            position:fixed;
+            left:50px;
+            top:-100%;
+            z-index:99999;
+            padding:0.7em 1em;
+            background-color:#000;
+            font-weight:500;
+            font-size:2em;
+            color:#fff;
+        }
+        .skip-nav a:focus{top:0;}
+        
+        /* POPUP STYLE */
+        .index-popup{
+            position:absolute;
+            left:50%;
+            top:200px;
+            z-index:99998;
+            width:400px;
+            padding:1.5em 1.5em 1em;
+            border-radius:10px;
+            background-color:#fff;;
+            transform:translate(-50%,0);
+        }
+        .index-popup .img-box{
+            border-radius:10px;
+            margin-bottom:1em;
+            overflow:hidden;
+        }
+        .index-popup .chkbox{
+            display:flex;
+            flex-flow:row nowrap;
+            justify-content:flex-end;
+            align-items:center;
+        }
+        .index-popup .chkbox input{margin-right:0.5em;}
+        .index-popup .cls-popup{
+            position:absolute;
+            right:-12px;
+            top:-12px;
+            width:32px;
+            height:32px;
+            border-radius:50%;
+            background-color:#666;
+            cursor:pointer;
+        }
+        .index-popup .fas.fa-times{font-size:18px;}
+        
+
+        /* AD1 STYLE */
+        .ad01{
+            height:80px;
+            position:relative;
+            overflow:hidden;
+            transition:0.3s;
+        }
+        .ad01 .cls-ad1{
+            position:absolute;
+            right:0;
+            bottom:0;
+            width:20px;
+            height:20px;
+            padding:2px 0 1px 5px;
+            background-color:#444;
+            cursor:pointer;
+        }
+        
+        
+        /* HEADER STYLE */
+        .header{height:500px;background-color:red;}
+
+
+        /* OFFICE STYLE */
+        .office{height:500px;background-color:green;}
+
+
+        /* BENEFIT STYLE */
+        .benefit{height:500px;background-color:blue;}
+
+
+        /* CURATION STYLE */
+        .curation{height:500px;background-color:cyan;}
+
+
+        /* INFO STYLE */
+        .info{height:500px;background-color:magenta;}
+
+
+        /* FOOTER STYLE */
+        .footer{height:500px;background-color:yellow;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* 테블릿 */
+        @media(max-width:959px){
+            /* SKIP NAV STYLE */
+            .skip-nav a{
+                /* width:300px; */
+                left:50%;
+                transition:translate(-50%,0);
+            }
+        }
+
+        /* 모바일 */
+        @media(max-width:639px){
+            /* POPUP STYLE */
+            .index-popup{
+                width:300px;
+            }
+        }
+
+        @media(max-width:320px){
+            *{display:none !important;}
+        }
+
+    </style>
 </head>
 <body>
+
+    <section class="skip-nav">
+        <a href="#office">박스오피스로 이동</a>
+        <a href="#benefit">혜택으로 이동</a>
+        <a href="#curation">큐레이션으로 이동</a>
+        <a href="#info">메가박스 정보로 이동</a>
+    </section>
+
+    <section class="index-popup" id="index-popup">
+        <div class="popup-container">
+            <div class="img-box">
+                <a href="#">
+                    <img src="./images/index-popup.jpg" alt="광명 메가박스 신규 오픈">
+                </a>
+            </div>
+            <div class="chkbox">
+                <input id="no-show" type="checkbox" name="no-show">
+                <label for="no-show">하루동안 보지 않기</label>
+            </div>
+            <button class="btn-cls cls-popup" id="cls-popup" type="button">
+                팝업닫기<i class="fas fa-times"></i>
+            </button>
+        </div>
+        <script>
+            // 쿠키 유무에 대한 팝업의 보여주기 여부
+                if($.cookie('Akc10L') == 'cHl001'){
+                    $('#index-popup').css('display','none');
+                }
+        </script>
+    </section>
+
+    <section class="wrap">
+        <section class="section ad01" id="ad01">
+            <div class="container">
+                <div class="img-box">
+                    <a href="#">
+                        <img src="./images/ad01.jpg" alt="현대해상 자동차보험 바로가기">
+                    </a>
+                </div>
+                <button class="btn-cls cls-ad1" id="cls-ad1" type="button">
+                    광고1닫기<i class="fas fa-times"></i>
+                </button>
+            </div>
+        </section>
+        <header class="header"></header>
+        <section class="section office" id="office"></section>
+        <section class="section benefit" id="benefit"></section>
+        <section class="section curation" id="curation"></section>
+        <section class="section info" id="info"></section>
+        <footer class="footer"></footer>
+    </section>
     
+
+    <script>
+        $(function(){
+            
+            // 팝업 종료 이벤트 및 쿠키 생성 여부
+            $('#cls-popup').on({
+                'click':function(){
+                    if($('#no-show').is(':checked')){
+                        $.cookie('Akc10L','cHl001',{expires:1})
+                    }
+                    $('#index-popup').css('display','none');
+                },
+            })
+
+            // 광고1 닫기
+            // $('#cls-ad1').on({
+            //     'click':function(){
+            //         $('#ad01').slideUp(300);
+            //     }
+            // })
+
+            let btnClsAd01 = document.getElementById('cls-ad1');
+            let secAd01 = document.getElementById('ad01');
+            btnClsAd01.addEventListener('click',function(){
+                secAd01.style.height = 0;
+            })
+
+        })
+    </script>
 </body>
 </html>
