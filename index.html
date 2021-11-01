@@ -40,13 +40,29 @@
         /* 기본스타일 - 데스크탑 */
             /* 웹폰트 Noto Sans KR */
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-
+        
+        .clearfix::after{
+            content:'';
+            display:block;
+            clear:both;
+        }
         :root{font-family:'Noto Sans KR', sans-serif;font-size:15px;font-weight:400;}
         .wrap{overflow:hidden;}
-        .container{max-width:1100px;margin:0 auto;}
-        .btn-cls{
-            font-size:0;
+        .container{max-width:1132px;margin:0 auto;padding:0 16px;}
+        .section{overflow:hidden;}
+        .section .container{
+            padding-top:51px;
+            padding-bottom:100px;
         }
+        .section .sec-tit{
+            margin-bottom:41px;
+            font-size:30px;
+            color:#fff;
+        }
+        .section .sec-main{
+            margin-bottom:40px;
+        }
+        .btn-cls{font-size:0;}
         .fas.fa-times{font-size:15px;color:#fff;}
 
         /* SKIP NAV STYLE */
@@ -101,30 +117,213 @@
         
 
         /* AD1 STYLE */
-        .ad01{
-            height:80px;
-            position:relative;
-            overflow:hidden;
-            transition:0.3s;
-        }
+        .ad01{position:relative;}
         .ad01 .cls-ad1{
             position:absolute;
             right:0;
             bottom:0;
             width:20px;
             height:20px;
-            padding:2px 0 1px 5px;
             background-color:#444;
             cursor:pointer;
         }
         
         
         /* HEADER STYLE */
-        .header{height:500px;background-color:red;}
+        .m-header{display:none;}
+        .header{
+            border-bottom:1px solid #fff;
+            padding:13px 0 14px;
+            background-color:#000;
+        }
+        .header *{color:#fff;}
+        .login *,.login .fas{color:#333;}
+        .header .container{
+            position:relative;
+        }
+        .logo{
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+        }
+        .logo a,.logo-top,.logo-bottom{display:block;}
+        .logo-top span{
+            width:22px;
+            height:34px;
+            margin-right:1px;
+            background-color:#fff;
+            float:left;
+            font-weight:700;
+            font-size:22px;
+            color:#000;
+            text-align:center;
+            line-height:32px;
+        }
+        .logo-top span:last-child{margin-right:0;}
+        .logo-bottom{font-weight:700;font-size:14px;text-align:center;}
+        .nav-top ul:first-child,.nav ul:first-child{float:left;}
+        .nav-top ul:last-child,.nav ul:last-child{float:right;}
+        .header li{
+            display:inline-block;
+            margin-right:20px;
+        }
+        .header li:last-child{margin-right:0;}
+        .nav-top{margin-bottom:12px;}
+        .nav-top li a{
+            font-weight:300;
+            font-size:14px;
+            color:rgba(204,204,204,0.6);
+        }
+        .nav-top li:hover a{
+            text-decoration:underline;
+        }
+        .nav-left li:first-child,.nav-right li:nth-child(4){margin-right:16px;}
+        .nav-left li:nth-child(2),.nav-right li:nth-child(3){margin-right:70px;}
+        .nav-left li:nth-child(3),.nav-left li:nth-child(4),.nav-right li:first-child,.nav-right li:nth-child(2){margin-right:54px;}
+        .nav a{font-size:21px;}
+        .login,.m-nav{position:fixed;left:0;right:0;top:0;bottom:0;z-index:99998;background-color:rgba(0,0,0,0.5);transform:translate(100%,0);transition:0.3s;}
+        .login .login-container,.m-nav .m-nav-container{width:30%;max-width:400px;min-width:300px;margin:0 auto;padding:32px 16px;background-color:#fff;}
+        .login h2{
+            position:absolute;
+            left:50%;
+            top:32px;
+            transform:translate(-50%,0);
+            font-size:20px;
+        }
+        .btn-close{margin-bottom:4em;text-align:right;}
+        .btn-close i.fas{font-size:20px;cursor:pointer;}
+        .login form div{margin-bottom:2em;}
+        .login form div input{width:100%;}
+        .login form div input[type="checkbox"]{width:13px;height:13px;}
+        .login .u-id input,.login .u-pass input{border-bottom:1px solid #666;padding-bottom:0.5em;}
+        .login .btn-login input{padding:1em;background-color:#503396;font-weight:700;font-size:1.2em;color:#fff;cursor:pointer;}
+        .login-bottom li{
+            width:33.3333%;
+            margin:0;
+            border-right:1px solid #666;
+            float:left;
+            text-align:center;
+        }
+        .login-bottom li:last-child{border-right:none;}
+        .m-nav{transform:translate(-100%,0);transition:0.3s;}
+        .m-nav .m-nav-container{
+            width:50%;
+            margin:0;
+            background-color:#503396;
+            position:relative;
+        }
+        .m-nav .m-nav-container::before{
+            height:1px;
+            content:'';
+            display:block;
+            background-color:#fff;
+            position:absolute;
+            left:0;
+            right:0;
+            top:68px;
+        }
+        .m-nav-header{display:flex;flex-flow:row wrap;justify-content:space-between;}
+        .m-nav-header>*{margin-bottom:1em;}
+        .m-nav-header h3{
+            width:80%;font-size:1.2em;}
+        .m-nav-header .home .fas{font-size:18px;}
+        .m-nav-header .btn-close-nav .fas{font-size:18px;}
+        .m-nav-header .login-box,.m-nav-header .join{
+            width:50%;
+            font-weight:300;
+            font-size: 0.9em;
+            text-align:center;
+        }
+        .m-nav-section{
+            border-top-left-radius:1em;
+            border-top-right-radius:1em;
+            background-color:#fff;
+        }
+        .m-nav-section ul:first-child{
+            margin-bottom:2em;
+            display:flex;
+            flex-flow:row wrap;
+            justify-content:space-evenly;
+        }
+        .tmp{
+            width:26%;
+            margin:2em 0 0 !important; 
+            text-align:center;
+            font-size:14px;
+        }
+        .tmp::before{
+            content:'';
+            display:block;
+            width:50px;
+            height:50px;
+            margin:0 auto;
+            border:1px solid #503396;
+            border-radius:50%;
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size:60%;
+        }
+        .tmp:nth-child(1)::before{
+            background-image:url(./images/icon01.png);
+        }
+        .tmp:nth-child(2)::before{
+            background-image:url(./images/icon02.png);
+        }
+        .tmp:nth-child(3)::before{
+            background-image:url(./images/icon03.png);
+        }
+        .tmp:nth-child(4)::before{
+            background-image:url(./images/icon04.png);
+        }
+        .tmp:nth-child(5)::before{
+            background-image:url(./images/icon05.png);
+        }
+        .tmp:nth-child(6)::before{
+            background-image:url(./images/icon06.png);
+        }
+        .m-nav-section a{color:#666;}
+        .m-nav-section ul:last-child{
+            display:flex;
+            flex-flow:column nowrap;
+            padding:0 1em;
+        }
+        .m-nav-section ul:last-child li{
+            margin-right:0;
+            border-top:1px solid #999;
+            padding:0.5em 0;
+            font-weight:300;
+        }
+        .m-nav-section ul:last-child li a{color:#000;}
+        .m-nav-section ul:last-child li:last-child{border-bottom:1px solid #999;}
+        .m-nav-footer{
+            border-bottom-left-radius:1em;
+            border-bottom-right-radius:1em;
+            padding:2em 0;background-color:#fff;display:flex;justify-content:space-evenly;}
+        .m-nav-footer i{font-size:2em;color:#333;}
 
 
-        /* OFFICE STYLE */
-        .office{height:500px;background-color:green;}
+
+
+
+
+        /* BOX OFFICE STYLE */
+        .box-office{
+            position:relative;
+        }
+        .box-office::before{
+            content:'';
+            display:block;
+            position:absolute;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            z-index:-100;
+            background:url('./images/bg-office.jpg') no-repeat center bottom;
+            background-size:cover;
+            /* filter:blur(10px) */
+        }
 
 
         /* BENEFIT STYLE */
@@ -156,24 +355,52 @@
 
 
         /* 테블릿 */
-        @media(max-width:959px){
+        @media(max-width:1023px){
             /* SKIP NAV STYLE */
             .skip-nav a{
                 /* width:300px; */
                 left:50%;
                 transition:translate(-50%,0);
             }
+
+            /* HEADER STYLE */
+            .nav a{font-size:18px;}
+            .nav ul:first-child{width:32%;}
+            .nav-left li:first-child{margin-right:6.3348%;}
+            .nav-left li:nth-child(2),.nav-left li:nth-child(3),.nav-left li:nth-child(4){margin-right:10%;}
+            .nav ul:last-child{width:40%;}
+            .nav-right li:first-child,.nav-right li:nth-child(2),.nav-right li:nth-child(3),.nav-right li:nth-child(4){width:27%;margin-right:0;float:left;text-align:right;}
+            .nav-right li:nth-child(4),.nav-right li:last-child{width:12.5%;float:left;text-align:right;}
+            .nav-right li:nth-child(3){width:21%;}
         }
 
+
+
+
+
+
         /* 모바일 */
-        @media(max-width:639px){
+        @media(max-width:767px){
             /* POPUP STYLE */
             .index-popup{
                 width:300px;
             }
+
+            /* AD01 STYLE */
+            .ad01{display:none;}
+
+            /* HEADER STYLE */
+            .d-header{display:none;}
+            .m-header{display:block;}
+            .m-header .nav ul{float:none;width:100%;}
+            .m-header .nav ul li{margin:0;}
+            .m-header .f-left{float:left;}
+            .m-header .f-right{float:right;}
+            .m-header .nav ul li.f-list{margin-right:20px;}
+            .m-header a{font-size:20px;}
         }
 
-        @media(max-width:320px){
+        @media(max-width:319px){
             *{display:none !important;}
         }
 
@@ -212,7 +439,7 @@
     </section>
 
     <section class="wrap">
-        <section class="section ad01" id="ad01">
+        <section class="ad01" id="ad01">
             <div class="container">
                 <div class="img-box">
                     <a href="#">
@@ -224,11 +451,328 @@
                 </button>
             </div>
         </section>
-        <header class="header"></header>
-        <section class="section office" id="office"></section>
-        <section class="section benefit" id="benefit"></section>
-        <section class="section curation" id="curation"></section>
-        <section class="section info" id="info"></section>
+
+        <header class="header">
+            <div class="container">
+                <!-- 데스크탑 헤더 -->
+                <article class="d-header">
+                    <h1 class="logo" title="시작페이지로 이동">
+                        <a href="#">
+                            <span class="logo-top clearfix">
+                                <span>M</span>
+                                <span>E</span>
+                                <span>G</span>
+                                <span>A</span>
+                                <span>B</span>
+                                <span>O</span>
+                                <span>X</span>
+                            </span>
+                            <span class="logo-bottom">
+                                MEET PLAY SHARE
+                            </span>
+                        </a>
+                    </h1>
+                    <div class="nav-top clearfix">
+                        <ul class="nav-top-left">
+                            <li><a href="#">VIP LOUNGE</a></li>
+                            <li><a href="#">멤버십</a></li>
+                            <li><a href="#">고객센터</a></li>
+                        </ul>
+                        <ul class="nav-top-right">
+                            <!-- 로그인버튼 클릭 시 로그인 창 팝업으로 등장 -->
+                            <li><a id="call-login1" href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">빠른예매</a></li>
+                        </ul>
+                    </div>
+                    <nav class="nav clearfix">
+                        <ul class="nav-left">
+                            <!-- 클릭 시 토글하여 화면 내려오게(헤더기준으로) -->
+                            <li><a id="btn-sitemap" href="#" title="사이트맵"><i class="fas fa-bars"></i></a></li>
+                            <li><a id="btn-search" href="#" title="영화검색"><i class="fas fa-search"></i></a></li>
+                            <li><a href="#">영화</a>
+                                <!-- <ul>
+                                    <li><a href="#">전체영화</a></li>
+                                    <li><a href="#">N스크린</a></li>
+                                    <li><a href="#">큐레이션</a></li>
+                                    <li><a href="#">무비포스트</a></li>
+                                </ul> -->
+                            </li>
+                            <li><a href="#">예매</a></li>
+                            <li><a href="#">극장</a></li>
+                        </ul>
+                        <ul class="nav-right">
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">스토어</a></li>
+                            <li><a href="#">혜택</a></li>
+                            <li><a href="#" title="상영시간표"><i class="far fa-calendar-alt"></i></a></li>
+                            <li><a id="btn-userinfo" href="#" title="회원정보"><i class="far fa-user"></i></a></li>
+                        </ul>
+                    </nav>
+                </article>
+                <!-- 모바일 헤더 -->
+                <article class="m-header">
+                    <h1 class="logo" title="시작페이지로 이동">
+                        <a href="#">
+                            <span class="logo-top clearfix">
+                                <span>M</span>
+                                <span>E</span>
+                                <span>G</span>
+                                <span>A</span>
+                                <span>B</span>
+                                <span>O</span>
+                                <span>X</span>
+                            </span>
+                        </a>
+                    </h1>
+                    <div class="nav">
+                        <ul class="clearfix">
+                            <li class="f-left f-list"><a href="#" id="btn-nav"><i class="fas fa-bars"></i></a></li>
+                            <li class="f-left"><a href="#"><i class="fas fa-search"></i></a></li>
+                            <li class="f-right"><a href="#" id="call-login2"><i class="far fa-user"></i></a></li>
+                            <li class="f-right f-list"><a href="#"><i class="far fa-calendar-alt"></i></a></li>
+                        </ul>
+                    </div>
+                </article>
+                <div class="login" id="login">
+                    <div class="login-container">
+                        <h2>로그인</h2>
+                        <div class="btn-close" id="btn-close">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <form>
+                            <div class="u-id"><input type="text" placeholder="아이디"></div>
+                            <div class="u-pass"><input type="password" placeholder="비밀번호"></div>
+                            <div class="save-id">
+                                <input type="checkbox" name="s-id" id="s-id">
+                                <label for="s-id">아이디저장</label>
+                            </div>
+                            <div class="btn-login">
+                                <input type="button" value="로그인">
+                            </div>
+                        </form>
+                        <ul class="login-bottom clearfix">
+                            <li><a href="#">ID/PW 찾기</a></li>
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">비회원 예매</a></li>
+                        </ul>
+                        <div class="ad04 img-box">
+                            <a href="#"><img src="./images/ad02.jpg" alt="광고2"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-nav" id="m-nav">
+                    <div class="m-nav-container">
+                        <div class="m-nav-header">
+                            <h3>
+                                <a href="#">로그인 후 이용가능</a>
+                            </h3>
+                            <div class="home">
+                                <a href="./index.html"><i class="fas fa-home"></i></i></a>
+                            </div>
+                            <div class="btn-close-nav" id="btn-close-nav">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div class="login-box">
+                                로그인
+                            </div>
+                            <div class="join">
+                                회원가입
+                            </div>
+                        </div>
+                        <div class="m-nav-section">
+                            <ul>
+                                <li class="tmp"><a href="#">영화</a></li>
+                                <li class="tmp"><a href="#">예매</a></li>
+                                <li class="tmp"><a href="#">극장</a></li>
+                                <li class="tmp"><a href="#">이벤트</a></li>
+                                <li class="tmp"><a href="#">스토어</a></li>
+                                <li class="tmp"><a href="#">혜택</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">VIP LOUNGE</a></li>
+                                <li><a href="#">멤버십</a></li>
+                                <li><a href="#">고객센터</a></li>
+                                <li><a href="#">빠른예매</a></li>
+                            </ul>
+                        </div>
+                        <div class="m-nav-footer">
+                            <div class="sns"><a href="#"><i class="fab fa-facebook"></i></a></div>
+                            <div class="sns"><a href="#"><i class="fab fa-instagram-square"></i></a></div>
+                            <div class="sns"><a href="#"><i class="fab fa-twitter-square"></i></a></div>
+                            <div class="sns"><a href="#"><i class="fab fa-youtube"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <article class="article sitemap" id="sitemap">
+                영화검색
+            </article>
+            <article class="article search" id="search">
+
+            </article>
+            <article class="article userinfo" id="userinfo">
+                
+            </article> -->
+        </header>
+        <section class="section box-office" id="box-office">
+            <div class="container">
+                <h2 class="sec-tit">박스오피스</h2>
+                <div class="sec-main box-office-slider office-poster">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide office01">
+                                <div class="poster img-box">
+                                    <a href="#"><img src="./images/boxoffice01.jpg" alt="이터널스 포스터"></a>
+                                </div>
+                                <h3>1</h3>
+                                <div class="good">
+                                    <i class="far fa-heart"></i>
+                                    <span>1K</span>
+                                </div>
+                                <div class="ticket">
+                                    예매
+                                </div>
+                            </div>
+                            <div class="swiper-slide office02">
+                                <div class="poster img-box">
+                                    <a href="#"><img src="./images/boxoffice02.jpg" alt="듄 포스터"></a>
+                                </div>
+                                <h3>2</h3>
+                                <div class="good">
+                                    <i class="far fa-heart"></i>
+                                    <span>3K</span>
+                                </div>
+                                <div class="ticket">
+                                    예매
+                                </div>
+                            </div>
+                            <div class="swiper-slide office03">
+                                <div class="poster img-box">
+                                    <a href="#"><img src="./images/boxoffice03.jpg" alt="베놈2 포스터"></a>
+                                </div>
+                                <h3>3</h3>
+                                <div class="good">
+                                    <i class="far fa-heart"></i>
+                                    <span>2K</span>
+                                </div>
+                                <div class="ticket">
+                                    예매
+                                </div>
+                            </div>
+                            <div class="swiper-slide office04">
+                                <div class="poster img-box">
+                                    <a href="#"><img src="./images/boxoffice04.jpg" alt="애프터 포스터"></a>
+                                </div>
+                                <h3>4</h3>
+                                <div class="good">
+                                    <i class="far fa-heart"></i>
+                                    <span>1K</span>
+                                </div>
+                                <div class="ticket">
+                                    예매
+                                </div>
+                            </div>
+                            <div class="swiper-slide office05">
+                                <div class="poster img-box">
+                                    <a href="#"><img src="./images/boxoffice05.jpg" alt="휴가 포스터"></a>
+                                </div>
+                                <h3>5</h3>
+                                <div class="good">
+                                    <i class="far fa-heart"></i>
+                                    <span>1K</span>
+                                </div>
+                                <div class="ticket">
+                                    예매
+                                </div>
+                            </div>
+                            <div class="swiper-slide office06">
+                                <div class="poster img-box">
+                                    <a href="#"><img src="./images/boxoffice06.jpg" alt="너의이름은 포스터"></a>
+                                </div>
+                                <h3>6</h3>
+                                <div class="good">
+                                    <i class="far fa-heart"></i>
+                                    <span>1K</span>
+                                </div>
+                                <div class="ticket">
+                                    예매
+                                </div>
+                            </div>
+                            <div class="swiper-slide office07">
+                                <div class="poster img-box">
+                                    <a href="#"><img src="./images/boxoffice07.jpg" alt="그래비티 포스터"></a>
+                                </div>
+                                <h3>7</h3>
+                                <div class="good">
+                                    <i class="far fa-heart"></i>
+                                    <span>1K</span>
+                                </div>
+                                <div class="ticket">
+                                    예매
+                                </div>
+                            </div>
+                            <div class="swiper-slide office08">
+                                <div class="poster img-box">
+                                    <a href="#"><img src="./images/boxoffice08.jpg" alt="마담버터플라이 포스터"></a>
+                                </div>
+                                <h3>8</h3>
+                                <div class="good">
+                                    <i class="far fa-heart"></i>
+                                    <span>1K</span>
+                                </div>
+                                <div class="ticket">
+                                    예매
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="office-nav sec-nav">
+                    <ul>
+                        <li>
+                            <input type="text" placeholder="영화명을 입력해주세요.">
+                            <i class="fas fa-search"></i>
+                        </li>
+                        <li>
+                            <input type="button" value="상영시간표">
+                            <i class="far fa-calendar-alt"></i>
+                        </li>
+                        <li>
+                            <input type="button" value="박스오피스">
+                            <i class="fas fa-film"></i>
+                        </li>
+                        <li>
+                            <input type="button" value="빠른예매">
+                            <i class="fas fa-ticket-alt"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="scr-mouse">
+                    <i class="fas fa-mouse"></i>
+                </div>
+            </div>
+        </section>
+        <section class="section benefit" id="benefit">
+            <div class="container">
+                <h2 class="sec-tit">혜택</h2>
+                <div class="sec-main"></div>
+                <div class="sec-nav"></div>
+            </div>
+        </section>
+        <section class="section curation" id="curation">
+            <div class="container">
+                <h2 class="sec-tit">큐레이션</h2>
+                <div class="sec-main"></div>
+            </div>
+        </section>
+        <section class="section info" id="info">
+            <div class="container">
+                <h2 class="sec-tit">메가박스 안내</h2>
+                <div class="sec-main"></div>
+                <div class="sec-nav"></div>
+            </div>
+        </section>
         <footer class="footer"></footer>
     </section>
     
@@ -244,21 +788,66 @@
                     }
                     $('#index-popup').css('display','none');
                 },
-            })
+            });
 
             // 광고1 닫기
-            // $('#cls-ad1').on({
-            //     'click':function(){
-            //         $('#ad01').slideUp(300);
-            //     }
-            // })
+            $('#cls-ad1').on({
+                'click':function(){
+                    $('#ad01').slideUp(300);
+                }
+            });
 
-            let btnClsAd01 = document.getElementById('cls-ad1');
-            let secAd01 = document.getElementById('ad01');
-            btnClsAd01.addEventListener('click',function(){
-                secAd01.style.height = 0;
+            // 로그인창 호출
+            $('#call-login1,#call-login2').on({
+                'click':function(){
+                    $('#login').css('transform','translate(0,0)');
+                }
+            });
+
+            // 로그인창 닫기
+            $('#btn-close').on({
+                'click':function(){
+                    $('#login').css('transform','translate(100%,0)');
+                }
+            });
+
+            // 모바일 네비 열기
+            $('#btn-nav').on({
+                'click':function(){
+                    $('#m-nav').css('transform','translate(0,0)');
+                }
+            });
+
+            // 모바일 네비 닫기
+            $('#btn-close-nav').on({
+                'click':closeMoblieNav,
+            })
+            $(window).on({
+                'resize':closeMoblieNav,
             })
 
+            function closeMoblieNav(){
+                $('#m-nav').css('transform','translate(-100%,0)')
+            }
+
+            // 박스오피스 슬라이더
+            const swiper = new Swiper('.swiper',{
+                loop:true,
+                breakpoints:{
+                    320:{
+                        slidesPerView:1.5,
+                        spaceBetween:16
+                    },
+                    768:{
+                        slidesPerView:2.5,
+                        spaceBetween:17
+                    },
+                    1024:{
+                        slidesPerView:3.5,
+                        spaceBetween:40
+                    },
+                }
+            })
         })
     </script>
 </body>
