@@ -8,14 +8,15 @@
     <meta name="robots" content="영화, 메가박스, 멀티플렉스, movie, megabox, multiflex">
     <meta name="description" content="사람들과 공유할 수 있는, 공간경험을 만듭니다.">
     <meta property="og:title" content="메가박스">
-    <meta property="og:url" content="https://10dy10.github.io/megabox/">
-    <meta property="og:image" content="https://10dy10.github.io/megabox/images/og-image.jpg">
+    <meta property="og:url" content="https://pam7464.github.io/megabox/">
+    <meta property="og:image" content="https://pam7464.github.io/megabox/images/og-image.jpg">
     <meta property="og:description" content="사람들과 공유할 수 있는, 공간경험을 만듭니다.">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="메가박스">
-    <meta name="twitter:url" content="https://10dy10.github.io/megabox/">
-    <meta name="twitter:image" content="https://10dy10.github.io/megabox/images/twiter-card.jpg">
+    <meta name="twitter:url" content="https://pam7464.github.io/megabox/">
+    <meta name="twitter:image" content="https://pam7464.github.io/megabox/images/twitter-card.jpg">
     <meta name="twitter:description" content="사람들과 공유할 수 있는, 공간경험을 만듭니다.">
+    
     <title>MEET PLAY SHARE, 메가박스</title>
 
     <!-- 스타일 -->
@@ -23,388 +24,21 @@
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
         <!-- 리셋 -->
     <link rel="stylesheet" href="./css/reset.css">
-        <!-- 스와이퍼 css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.2.0/swiper-bundle.min.css">
+        <!-- 스와이프 css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.2.0/swiper-bundle.min.css" integrity="sha512-BYn1UZcpzkgi4cForzUzU/FqsewIcfXDYAU0tThFfehimrUrp5hOtcWPI1Wpli8rKopUIhaDCbxXPttBDTISgA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- 아이콘폰트 폰트아썸 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+        <!-- 인덱스 페이지 스타일 -->
+    <link rel="stylesheet" href="./css/index.css">
+    
     <!-- 스크립트 -->
         <!-- 라이브러리 jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <!-- 라이브러리 jquery cookie -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-        <!-- 스와이퍼 js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.2.0/swiper-bundle.min.js"></script>
-
-    <style>
-        /* 기본스타일 - 데스크탑 */
-            /* 웹폰트 Noto Sans KR */
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-        
-        .clearfix::after{
-            content:'';
-            display:block;
-            clear:both;
-        }
-        :root{font-family:'Noto Sans KR', sans-serif;font-size:15px;font-weight:400;}
-        .wrap{overflow:hidden;}
-        .container{max-width:1132px;margin:0 auto;padding:0 16px;}
-        .section{overflow:hidden;}
-        .section .container{
-            padding-top:51px;
-            padding-bottom:100px;
-        }
-        .section .sec-tit{
-            margin-bottom:41px;
-            font-size:30px;
-            color:#fff;
-        }
-        .section .sec-main{
-            margin-bottom:40px;
-        }
-        .btn-cls{font-size:0;}
-        .fas.fa-times{font-size:15px;color:#fff;}
-
-        /* SKIP NAV STYLE */
-        .skip-nav a{
-            position:fixed;
-            left:50px;
-            top:-100%;
-            z-index:99999;
-            padding:0.7em 1em;
-            background-color:#000;
-            font-weight:500;
-            font-size:2em;
-            color:#fff;
-        }
-        .skip-nav a:focus{top:0;}
-        
-        /* POPUP STYLE */
-        .index-popup{
-            position:absolute;
-            left:50%;
-            top:200px;
-            z-index:99998;
-            width:400px;
-            padding:1.5em 1.5em 1em;
-            border-radius:10px;
-            background-color:#fff;;
-            transform:translate(-50%,0);
-        }
-        .index-popup .img-box{
-            border-radius:10px;
-            margin-bottom:1em;
-            overflow:hidden;
-        }
-        .index-popup .chkbox{
-            display:flex;
-            flex-flow:row nowrap;
-            justify-content:flex-end;
-            align-items:center;
-        }
-        .index-popup .chkbox input{margin-right:0.5em;}
-        .index-popup .cls-popup{
-            position:absolute;
-            right:-12px;
-            top:-12px;
-            width:32px;
-            height:32px;
-            border-radius:50%;
-            background-color:#666;
-            cursor:pointer;
-        }
-        .index-popup .fas.fa-times{font-size:18px;}
-        
-
-        /* AD1 STYLE */
-        .ad01{position:relative;}
-        .ad01 .cls-ad1{
-            position:absolute;
-            right:0;
-            bottom:0;
-            width:20px;
-            height:20px;
-            background-color:#444;
-            cursor:pointer;
-        }
-        
-        
-        /* HEADER STYLE */
-        .m-header{display:none;}
-        .header{
-            border-bottom:1px solid #fff;
-            padding:13px 0 14px;
-            background-color:#000;
-        }
-        .header *{color:#fff;}
-        .login *,.login .fas{color:#333;}
-        .header .container{
-            position:relative;
-        }
-        .logo{
-            position:absolute;
-            left:50%;
-            top:50%;
-            transform:translate(-50%,-50%);
-        }
-        .logo a,.logo-top,.logo-bottom{display:block;}
-        .logo-top span{
-            width:22px;
-            height:34px;
-            margin-right:1px;
-            background-color:#fff;
-            float:left;
-            font-weight:700;
-            font-size:22px;
-            color:#000;
-            text-align:center;
-            line-height:32px;
-        }
-        .logo-top span:last-child{margin-right:0;}
-        .logo-bottom{font-weight:700;font-size:14px;text-align:center;}
-        .nav-top ul:first-child,.nav ul:first-child{float:left;}
-        .nav-top ul:last-child,.nav ul:last-child{float:right;}
-        .header li{
-            display:inline-block;
-            margin-right:20px;
-        }
-        .header li:last-child{margin-right:0;}
-        .nav-top{margin-bottom:12px;}
-        .nav-top li a{
-            font-weight:300;
-            font-size:14px;
-            color:rgba(204,204,204,0.6);
-        }
-        .nav-top li:hover a{
-            text-decoration:underline;
-        }
-        .nav-left li:first-child,.nav-right li:nth-child(4){margin-right:16px;}
-        .nav-left li:nth-child(2),.nav-right li:nth-child(3){margin-right:70px;}
-        .nav-left li:nth-child(3),.nav-left li:nth-child(4),.nav-right li:first-child,.nav-right li:nth-child(2){margin-right:54px;}
-        .nav a{font-size:21px;}
-        .login,.m-nav{position:fixed;left:0;right:0;top:0;bottom:0;z-index:99998;background-color:rgba(0,0,0,0.5);transform:translate(100%,0);transition:0.3s;}
-        .login .login-container,.m-nav .m-nav-container{width:30%;max-width:400px;min-width:300px;margin:0 auto;padding:32px 16px;background-color:#fff;}
-        .login h2{
-            position:absolute;
-            left:50%;
-            top:32px;
-            transform:translate(-50%,0);
-            font-size:20px;
-        }
-        .btn-close{margin-bottom:4em;text-align:right;}
-        .btn-close i.fas{font-size:20px;cursor:pointer;}
-        .login form div{margin-bottom:2em;}
-        .login form div input{width:100%;}
-        .login form div input[type="checkbox"]{width:13px;height:13px;}
-        .login .u-id input,.login .u-pass input{border-bottom:1px solid #666;padding-bottom:0.5em;}
-        .login .btn-login input{padding:1em;background-color:#503396;font-weight:700;font-size:1.2em;color:#fff;cursor:pointer;}
-        .login-bottom li{
-            width:33.3333%;
-            margin:0;
-            border-right:1px solid #666;
-            float:left;
-            text-align:center;
-        }
-        .login-bottom li:last-child{border-right:none;}
-        .m-nav{transform:translate(-100%,0);transition:0.3s;}
-        .m-nav .m-nav-container{
-            width:50%;
-            margin:0;
-            background-color:#503396;
-            position:relative;
-        }
-        .m-nav .m-nav-container::before{
-            height:1px;
-            content:'';
-            display:block;
-            background-color:#fff;
-            position:absolute;
-            left:0;
-            right:0;
-            top:68px;
-        }
-        .m-nav-header{display:flex;flex-flow:row wrap;justify-content:space-between;}
-        .m-nav-header>*{margin-bottom:1em;}
-        .m-nav-header h3{
-            width:80%;font-size:1.2em;}
-        .m-nav-header .home .fas{font-size:18px;}
-        .m-nav-header .btn-close-nav .fas{font-size:18px;}
-        .m-nav-header .login-box,.m-nav-header .join{
-            width:50%;
-            font-weight:300;
-            font-size: 0.9em;
-            text-align:center;
-        }
-        .m-nav-section{
-            border-top-left-radius:1em;
-            border-top-right-radius:1em;
-            background-color:#fff;
-        }
-        .m-nav-section ul:first-child{
-            margin-bottom:2em;
-            display:flex;
-            flex-flow:row wrap;
-            justify-content:space-evenly;
-        }
-        .tmp{
-            width:26%;
-            margin:2em 0 0 !important; 
-            text-align:center;
-            font-size:14px;
-        }
-        .tmp::before{
-            content:'';
-            display:block;
-            width:50px;
-            height:50px;
-            margin:0 auto;
-            border:1px solid #503396;
-            border-radius:50%;
-            background-repeat:no-repeat;
-            background-position:center;
-            background-size:60%;
-        }
-        .tmp:nth-child(1)::before{
-            background-image:url(./images/icon01.png);
-        }
-        .tmp:nth-child(2)::before{
-            background-image:url(./images/icon02.png);
-        }
-        .tmp:nth-child(3)::before{
-            background-image:url(./images/icon03.png);
-        }
-        .tmp:nth-child(4)::before{
-            background-image:url(./images/icon04.png);
-        }
-        .tmp:nth-child(5)::before{
-            background-image:url(./images/icon05.png);
-        }
-        .tmp:nth-child(6)::before{
-            background-image:url(./images/icon06.png);
-        }
-        .m-nav-section a{color:#666;}
-        .m-nav-section ul:last-child{
-            display:flex;
-            flex-flow:column nowrap;
-            padding:0 1em;
-        }
-        .m-nav-section ul:last-child li{
-            margin-right:0;
-            border-top:1px solid #999;
-            padding:0.5em 0;
-            font-weight:300;
-        }
-        .m-nav-section ul:last-child li a{color:#000;}
-        .m-nav-section ul:last-child li:last-child{border-bottom:1px solid #999;}
-        .m-nav-footer{
-            border-bottom-left-radius:1em;
-            border-bottom-right-radius:1em;
-            padding:2em 0;background-color:#fff;display:flex;justify-content:space-evenly;}
-        .m-nav-footer i{font-size:2em;color:#333;}
-
-
-
-
-
-
-        /* BOX OFFICE STYLE */
-        .box-office{
-            position:relative;
-        }
-        .box-office::before{
-            content:'';
-            display:block;
-            position:absolute;
-            left:0;
-            right:0;
-            top:0;
-            bottom:0;
-            z-index:-100;
-            background:url('./images/bg-office.jpg') no-repeat center bottom;
-            background-size:cover;
-            /* filter:blur(10px) */
-        }
-
-
-        /* BENEFIT STYLE */
-        .benefit{height:500px;background-color:blue;}
-
-
-        /* CURATION STYLE */
-        .curation{height:500px;background-color:cyan;}
-
-
-        /* INFO STYLE */
-        .info{height:500px;background-color:magenta;}
-
-
-        /* FOOTER STYLE */
-        .footer{height:500px;background-color:yellow;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /* 테블릿 */
-        @media(max-width:1023px){
-            /* SKIP NAV STYLE */
-            .skip-nav a{
-                /* width:300px; */
-                left:50%;
-                transition:translate(-50%,0);
-            }
-
-            /* HEADER STYLE */
-            .nav a{font-size:18px;}
-            .nav ul:first-child{width:32%;}
-            .nav-left li:first-child{margin-right:6.3348%;}
-            .nav-left li:nth-child(2),.nav-left li:nth-child(3),.nav-left li:nth-child(4){margin-right:10%;}
-            .nav ul:last-child{width:40%;}
-            .nav-right li:first-child,.nav-right li:nth-child(2),.nav-right li:nth-child(3),.nav-right li:nth-child(4){width:27%;margin-right:0;float:left;text-align:right;}
-            .nav-right li:nth-child(4),.nav-right li:last-child{width:12.5%;float:left;text-align:right;}
-            .nav-right li:nth-child(3){width:21%;}
-        }
-
-
-
-
-
-
-        /* 모바일 */
-        @media(max-width:767px){
-            /* POPUP STYLE */
-            .index-popup{
-                width:300px;
-            }
-
-            /* AD01 STYLE */
-            .ad01{display:none;}
-
-            /* HEADER STYLE */
-            .d-header{display:none;}
-            .m-header{display:block;}
-            .m-header .nav ul{float:none;width:100%;}
-            .m-header .nav ul li{margin:0;}
-            .m-header .f-left{float:left;}
-            .m-header .f-right{float:right;}
-            .m-header .nav ul li.f-list{margin-right:20px;}
-            .m-header a{font-size:20px;}
-        }
-
-        @media(max-width:319px){
-            *{display:none !important;}
-        }
-
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- 스와이프 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.2.0/swiper-bundle.min.js" integrity="sha512-XHnWZWvy5TkCnPgLU7XsWhGAks1JQ3uFutVxRSH0Z4+djsGkCkxVsYu+JgfrDicvbCmjfUf1HeMWYUvUYKgjzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ 
 </head>
 <body>
 
@@ -418,9 +52,7 @@
     <section class="index-popup" id="index-popup">
         <div class="popup-container">
             <div class="img-box">
-                <a href="#">
-                    <img src="./images/index-popup.jpg" alt="광명 메가박스 신규 오픈">
-                </a>
+                <a href="#"><img src="./images/index-popup.jpg" alt="광명 메가박스 신규오픈"></a>                
             </div>
             <div class="chkbox">
                 <input id="no-show" type="checkbox" name="no-show">
@@ -430,31 +62,27 @@
                 팝업닫기<i class="fas fa-times"></i>
             </button>
         </div>
-        <script>
-            // 쿠키 유무에 대한 팝업의 보여주기 여부
-                if($.cookie('Akc10L') == 'cHl001'){
-                    $('#index-popup').css('display','none');
-                }
-        </script>
+    <script>
+        // 쿠키에 유무에 대한 팝업의 보여주기 여부
+        if($.cookie('Akc10L') == 'cHl001'){
+            $('#index-popup').css('display','none');
+        }
+    </script>
     </section>
 
     <section class="wrap">
         <section class="ad01" id="ad01">
             <div class="container">
                 <div class="img-box">
-                    <a href="#">
-                        <img src="./images/ad01.jpg" alt="현대해상 자동차보험 바로가기">
-                    </a>
+                    <a href="#"><img src="./images/ad01.jpg" alt="현대해상 자동차보험 바로가기"></a>
                 </div>
                 <button class="btn-cls cls-ad1" id="cls-ad1" type="button">
                     광고1닫기<i class="fas fa-times"></i>
                 </button>
             </div>
         </section>
-
         <header class="header">
             <div class="container">
-                <!-- 데스크탑 헤더 -->
                 <article class="d-header">
                     <h1 class="logo" title="시작페이지로 이동">
                         <a href="#">
@@ -479,25 +107,16 @@
                             <li><a href="#">고객센터</a></li>
                         </ul>
                         <ul class="nav-top-right">
-                            <!-- 로그인버튼 클릭 시 로그인 창 팝업으로 등장 -->
-                            <li><a id="call-login1" href="#">로그인</a></li>
+                            <li><a href="#" id="call-login1">로그인</a></li>
                             <li><a href="#">회원가입</a></li>
                             <li><a href="#">빠른예매</a></li>
                         </ul>
                     </div>
                     <nav class="nav clearfix">
                         <ul class="nav-left">
-                            <!-- 클릭 시 토글하여 화면 내려오게(헤더기준으로) -->
-                            <li><a id="btn-sitemap" href="#" title="사이트맵"><i class="fas fa-bars"></i></a></li>
-                            <li><a id="btn-search" href="#" title="영화검색"><i class="fas fa-search"></i></a></li>
-                            <li><a href="#">영화</a>
-                                <!-- <ul>
-                                    <li><a href="#">전체영화</a></li>
-                                    <li><a href="#">N스크린</a></li>
-                                    <li><a href="#">큐레이션</a></li>
-                                    <li><a href="#">무비포스트</a></li>
-                                </ul> -->
-                            </li>
+                            <li><a href="#" title="사이트맵"><i class="fas fa-bars"></i></a></li>
+                            <li><a href="#" title="영화찾기"><i class="fas fa-search"></i></a></li>
+                            <li><a href="#">영화</a></li>
                             <li><a href="#">예매</a></li>
                             <li><a href="#">극장</a></li>
                         </ul>
@@ -506,11 +125,10 @@
                             <li><a href="#">스토어</a></li>
                             <li><a href="#">혜택</a></li>
                             <li><a href="#" title="상영시간표"><i class="far fa-calendar-alt"></i></a></li>
-                            <li><a id="btn-userinfo" href="#" title="회원정보"><i class="far fa-user"></i></a></li>
+                            <li><a href="#" title="회원정보"><i class="far fa-user"></i></a></li>
                         </ul>
                     </nav>
                 </article>
-                <!-- 모바일 헤더 -->
                 <article class="m-header">
                     <h1 class="logo" title="시작페이지로 이동">
                         <a href="#">
@@ -522,17 +140,17 @@
                                 <span>B</span>
                                 <span>O</span>
                                 <span>X</span>
-                            </span>
+                            </span>                            
                         </a>
                     </h1>
-                    <div class="nav">
+                    <nav class="nav">
                         <ul class="clearfix">
                             <li class="f-left f-list"><a href="#" id="btn-nav"><i class="fas fa-bars"></i></a></li>
-                            <li class="f-left"><a href="#"><i class="fas fa-search"></i></a></li>
+                            <li class="f-left"><a href="#"><i class="fas fa-search"></i></a></li>                            
                             <li class="f-right"><a href="#" id="call-login2"><i class="far fa-user"></i></a></li>
                             <li class="f-right f-list"><a href="#"><i class="far fa-calendar-alt"></i></a></li>
                         </ul>
-                    </div>
+                    </nav>
                 </article>
                 <div class="login" id="login">
                     <div class="login-container">
@@ -541,34 +159,40 @@
                             <i class="fas fa-times"></i>
                         </div>
                         <form>
-                            <div class="u-id"><input type="text" placeholder="아이디"></div>
-                            <div class="u-pass"><input type="password" placeholder="비밀번호"></div>
+                            <div class="u-id">
+                                <input type="text" placeholder="아이디">
+                            </div>
+                            <div class="u-pass">
+                                <input type="password" placeholder="비밀번호">
+                            </div>
                             <div class="save-id">
                                 <input type="checkbox" name="s-id" id="s-id">
-                                <label for="s-id">아이디저장</label>
+                                <label for="s-id">아이디 저장</label>
                             </div>
                             <div class="btn-login">
                                 <input type="button" value="로그인">
-                            </div>
+                            </div>                            
                         </form>
                         <ul class="login-bottom clearfix">
-                            <li><a href="#">ID/PW 찾기</a></li>
+                            <li><a href="#">ID/PW찾기</a></li>
                             <li><a href="#">회원가입</a></li>
                             <li><a href="#">비회원 예매</a></li>
                         </ul>
                         <div class="ad04 img-box">
                             <a href="#"><img src="./images/ad02.jpg" alt="광고2"></a>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
                 <div class="m-nav" id="m-nav">
                     <div class="m-nav-container">
                         <div class="m-nav-header">
                             <h3>
-                                <a href="#">로그인 후 이용가능</a>
+                                <a href="#">로그인후 사용하세요</a>
                             </h3>
                             <div class="home">
-                                <a href="./index.html"><i class="fas fa-home"></i></i></a>
+                                <a href="./index.html">
+                                    <i class="fas fa-home"></i>
+                                </a>
                             </div>
                             <div class="btn-close-nav" id="btn-close-nav">
                                 <i class="fas fa-times"></i>
@@ -594,7 +218,7 @@
                                 <li><a href="#">멤버십</a></li>
                                 <li><a href="#">고객센터</a></li>
                                 <li><a href="#">빠른예매</a></li>
-                            </ul>
+                            </ul>                           
                         </div>
                         <div class="m-nav-footer">
                             <div class="sns"><a href="#"><i class="fab fa-facebook"></i></a></div>
@@ -605,15 +229,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <article class="article sitemap" id="sitemap">
-                영화검색
-            </article>
-            <article class="article search" id="search">
-
-            </article>
-            <article class="article userinfo" id="userinfo">
-                
-            </article> -->
         </header>
         <section class="section box-office" id="box-office">
             <div class="container">
@@ -623,12 +238,12 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide office01">
                                 <div class="poster img-box">
-                                    <a href="#"><img src="./images/boxoffice01.jpg" alt="이터널스 포스터"></a>
+                                    <a href="#"><img src="./images/boxoffice01.jpg" alt="이터널스 포스터 클릭하면 이터널스로 이동합니다."></a>
                                 </div>
                                 <h3>1</h3>
                                 <div class="good">
-                                    <i class="far fa-heart"></i>
-                                    <span>1K</span>
+                                        <i class="far fa-heart"></i>
+                                        <span>1k</span>
                                 </div>
                                 <div class="ticket">
                                     예매
@@ -636,12 +251,12 @@
                             </div>
                             <div class="swiper-slide office02">
                                 <div class="poster img-box">
-                                    <a href="#"><img src="./images/boxoffice02.jpg" alt="듄 포스터"></a>
+                                    <a href="#"><img src="./images/boxoffice02.jpg" alt="듄 포스터 클릭하면 이터널스로 이동합니다."></a>
                                 </div>
                                 <h3>2</h3>
                                 <div class="good">
                                     <i class="far fa-heart"></i>
-                                    <span>3K</span>
+                                    <span>3k</span>
                                 </div>
                                 <div class="ticket">
                                     예매
@@ -649,12 +264,12 @@
                             </div>
                             <div class="swiper-slide office03">
                                 <div class="poster img-box">
-                                    <a href="#"><img src="./images/boxoffice03.jpg" alt="베놈2 포스터"></a>
+                                    <a href="#"><img src="./images/boxoffice03.jpg" alt="베놈2 포스터 클릭하면 베놈2로 이동합니다."></a>
                                 </div>
                                 <h3>3</h3>
                                 <div class="good">
                                     <i class="far fa-heart"></i>
-                                    <span>2K</span>
+                                    <span>2k</span>
                                 </div>
                                 <div class="ticket">
                                     예매
@@ -662,12 +277,12 @@
                             </div>
                             <div class="swiper-slide office04">
                                 <div class="poster img-box">
-                                    <a href="#"><img src="./images/boxoffice04.jpg" alt="애프터 포스터"></a>
+                                    <a href="#"><img src="./images/boxoffice04.jpg" alt="애프터 포스터 클릭하면 애프터로 이동합니다."></a>
                                 </div>
                                 <h3>4</h3>
                                 <div class="good">
                                     <i class="far fa-heart"></i>
-                                    <span>1K</span>
+                                    <span>0.5k</span>
                                 </div>
                                 <div class="ticket">
                                     예매
@@ -675,12 +290,12 @@
                             </div>
                             <div class="swiper-slide office05">
                                 <div class="poster img-box">
-                                    <a href="#"><img src="./images/boxoffice05.jpg" alt="휴가 포스터"></a>
+                                    <a href="#"><img src="./images/boxoffice05.jpg" alt="휴가 포스터 클릭하면 휴가로 이동합니다."></a>
                                 </div>
                                 <h3>5</h3>
                                 <div class="good">
                                     <i class="far fa-heart"></i>
-                                    <span>1K</span>
+                                    <span>1k</span>
                                 </div>
                                 <div class="ticket">
                                     예매
@@ -688,12 +303,12 @@
                             </div>
                             <div class="swiper-slide office06">
                                 <div class="poster img-box">
-                                    <a href="#"><img src="./images/boxoffice06.jpg" alt="너의이름은 포스터"></a>
+                                    <a href="#"><img src="./images/boxoffice06.jpg" alt="너의 이름은 포스터 클릭하면 너의 이름은으로 이동합니다."></a>
                                 </div>
                                 <h3>6</h3>
                                 <div class="good">
                                     <i class="far fa-heart"></i>
-                                    <span>1K</span>
+                                    <span>3k</span>
                                 </div>
                                 <div class="ticket">
                                     예매
@@ -701,12 +316,12 @@
                             </div>
                             <div class="swiper-slide office07">
                                 <div class="poster img-box">
-                                    <a href="#"><img src="./images/boxoffice07.jpg" alt="그래비티 포스터"></a>
+                                    <a href="#"><img src="./images/boxoffice07.jpg" alt="그래비티 포스터 클릭하면 그래비티로 이동합니다."></a>
                                 </div>
                                 <h3>7</h3>
                                 <div class="good">
                                     <i class="far fa-heart"></i>
-                                    <span>1K</span>
+                                    <span>5k</span>
                                 </div>
                                 <div class="ticket">
                                     예매
@@ -714,38 +329,39 @@
                             </div>
                             <div class="swiper-slide office08">
                                 <div class="poster img-box">
-                                    <a href="#"><img src="./images/boxoffice08.jpg" alt="마담버터플라이 포스터"></a>
+                                    <a href="#"><img src="./images/boxoffice08.jpg" alt="마담 버터플라이 포스터 클릭하면 마담 버터플라이로 이동합니다."></a>
                                 </div>
                                 <h3>8</h3>
                                 <div class="good">
                                     <i class="far fa-heart"></i>
-                                    <span>1K</span>
+                                    <span>6k</span>
                                 </div>
                                 <div class="ticket">
                                     예매
                                 </div>
                             </div>
-                        </div>
+
+                        </div>                    
                     </div>
                 </div>
                 <div class="office-nav sec-nav">
-                    <ul>
+                    <ul class="clearfix">
                         <li>
-                            <input type="text" placeholder="영화명을 입력해주세요.">
-                            <i class="fas fa-search"></i>
-                        </li>
+                            <i class="fas fa-search" title="영화 검색"></i>
+                            <input type="text" placeholder="영화명을 입력해 주세요">
+                        </li> 
                         <li>
+                            <i class="fas fa-calendar-alt" title="상영시간표"></i>
                             <input type="button" value="상영시간표">
-                            <i class="far fa-calendar-alt"></i>
-                        </li>
+                        </li>   
                         <li>
+                            <i class="fas fa-film" title="박스오피스"></i>
                             <input type="button" value="박스오피스">
-                            <i class="fas fa-film"></i>
-                        </li>
+                        </li>   
                         <li>
-                            <input type="button" value="빠른예매">
-                            <i class="fas fa-ticket-alt"></i>
-                        </li>
+                            <i class="fas fa-ticket-alt" title="빠른예매"></i>
+                            <input type="button" value="빠른예매">                            
+                        </li>                  
                     </ul>
                 </div>
                 <div class="scr-mouse">
@@ -756,99 +372,349 @@
         <section class="section benefit" id="benefit">
             <div class="container">
                 <h2 class="sec-tit">혜택</h2>
-                <div class="sec-main"></div>
-                <div class="sec-nav"></div>
+                <div class="sec-main benefit-main clearfix">
+                    <div class="benefit-left">
+                        <div class="benefit-slide01">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit1-1.jpg" alt="메가박스 오리지널 티켓"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit2-1.jpg" alt="네이버페이 X 메가박스"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit3-1.jpg" alt="메가박스 오리지널 티켓2"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit4-1.jpg" alt="광명AK플라자 오픈기념"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit5-1.jpg" alt="신규가입대장 이벤트"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit6-1.jpg" alt="신규&휴면 회원 이벤트"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit7-1.jpg" alt="메가박스 X LGU+"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit8-1.jpg" alt="매일 매일 엘포인트"></a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="benefit-slide02">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit1-2.jpg" alt="메가박스 오리지널 티켓"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit2-2.jpg" alt="네이버페이 X 메가박스"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit3-2.jpg" alt="메가박스 오리지널 티켓2"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit4-2.jpg" alt="광명AK플라자 오픈기념"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit5-2.jpg" alt="신규가입대장 이벤트"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit6-2.jpg" alt="신규&휴면 회원 이벤트"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit7-2.jpg" alt="메가박스 X LGU+"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="./images/benefit8-2.jpg" alt="매일 매일 엘포인트"></a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="benefit-event01">
+                            <div class="img-box">
+                                <a href="#"><img src="./images/event01.jpg" alt="이벤트01"></a>
+                            </div>
+                        </div>
+                        <div class="benefit-event02">
+                            <div class="img-box">
+                                <a href="#"><img src="./images/event02.jpg" alt="이벤트02"></a>
+                            </div>
+                        </div>
+                        <div class="benefit-controls clearfix">
+                            <ul class="progress-bar clearfix">
+                                <li class="active">막대</li>
+                                <li>막대</li>
+                                <li>막대</li>
+                                <li>막대</li>
+                                <li>막대</li>
+                                <li>막대</li>
+                                <li>막대</li>
+                                <li>막대</li>
+                            </ul>
+                            <div class="btn-prev"><i class="fas fa-chevron-left"></i></div>
+                            <div class="btn-next"><i class="fas fa-chevron-right"></i></div>
+                            <div class="btn-play"><i class="fas fa-play"></i></div>
+                            <div class="btn-stop"><i class="fas fa-pause"></i></div>
+                            <div class="pages"><span>1</span> / 8</div>
+                        </div>
+                    </div>
+                    <div class="ad02">
+                        <div class="img-box">
+                            <a href="#"><img src="./images/ad02.jpg" alt="광고2"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sec-nav benefit-nav">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="#">
+                                <span>VIP LOUNGE</span>
+                            </a>
+                        </li>   
+                        <li>
+                            <a href="#">
+                                <span>멤버십</span>
+                            </a>
+                        </li>               
+                        <li>
+                            <a href="#">
+                                <span>할인카드 안내</span>
+                            </a>
+                        </li>   
+                        <li>
+                            <a href="#">
+                                <span>이벤트</span>
+                            </a>
+                        </li>      
+                        <li>
+                            <a href="#">
+                                <span>스토어</span>
+                            </a>
+                        </li> 
+                    </ul>
+                </div>
             </div>
         </section>
         <section class="section curation" id="curation">
             <div class="container">
                 <h2 class="sec-tit">큐레이션</h2>
-                <div class="sec-main"></div>
+                <div class="sec-main curation-main clearfix">
+                    <div class="society-poster">
+                        <div class="poster img-box">
+                            <a href="#"><img src="./images/curation-main.jpg" alt="마담버터플라이"></a>
+                        </div>
+                        <h3>
+                            MEGABOX
+                            <br>
+                            CLASSIC
+                            <br>
+                            SOCIETY
+                        </h3>
+                        <div class="good">
+                            <span>상세정보</span>
+                        </div>
+                        <div class="ticket">
+                            예매
+                        </div>
+                    </div>
+                    <div class="society">
+                        <h4>#클래식소사이어티</h4>
+                        <h5>[오페라] 마담 버터플라이@The Met</h5>
+                        <p>[SEASON 2021 뉴욕 메트로폴리탄 오페라]
+                            <br>
+                            <br>
+                            코로나19여파로 뉴욕 현지에서 오페라 공연이 진행되지 못하여, 2021 메트 오페라는 2010년대 이후 공연작 중 화제의 오페라를 엄선하여 상영합니다.
+                            <br>
+                            <br>
+                            [상영정보]
+                            <br>
+                            - 상영 일정 : 2021년 9월 7일 ~ 2021일 10월 30일 / 화19:00 (목동, 킨텍스, 센트럴 14:00), 토 14:00 상영
+                            <br>
+                            *거리두기 단계에 따라 평일 저녁 상영 시간은 조정될 수 있습니다.
+                        </p>
+                        <ul>
+                            <li>
+                                <p class="level level-f">F</p>
+                                <div class="img-box">
+                                    <a href="#">
+                                        <img src="./images/curation01.jpg" alt="당신은 믿지 않겠지만">
+                                    </a>
+                                </div>
+                                <h6>당신은 믿지 않겠지만</h6>
+                            </li>
+                            <li>
+                                <p class="level level-c">C</p>
+                                <div class="img-box">
+                                    <a href="#">
+                                        <img src="./images/curation02.jpg" alt="오페라토스카">
+                                    </a>
+                                </div>
+                                <h6>아버지의 길</h6>
+                            </li>
+                            <li>
+                                <p class="level level-f">F</p>
+                                <div class="img-box">
+                                    <a href="#">
+                                        <img src="./images/curation03.jpg" alt="가치갑시다">
+                                    </a>
+                                </div>
+                                <h6>당신얼굴 옆에서</h6>
+                            </li>
+                            <li>
+                                <p class="level level-c">C</p>
+                                <div class="img-box">
+                                    <a href="#">
+                                        <img src="./images/curation04.jpg" alt="라보엠">
+                                    </a>
+                                </div>
+                                <h6>쁘띠마망</h6>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="section info" id="info">
             <div class="container">
                 <h2 class="sec-tit">메가박스 안내</h2>
-                <div class="sec-main"></div>
-                <div class="sec-nav"></div>
+                <div class="sec-main">
+                    <ul class="info-list">
+                        <li>
+                            <a href="#"><img src="./images/info01.jpg" alt="info01"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./images/info02.jpg" alt="info02"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./images/info03.jpg" alt="info03"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./images/info04.jpg" alt="info04"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./images/info05.jpg" alt="info05"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./images/info06.jpg" alt="info06"></a>
+                        </li>
+                    </ul>
+                    <ul class="notice">
+                        <li>지점</li>
+                        <li>
+                            <a href="#">[송파파크하비오] [ 송파파크하비오] 임시 휴업 안내</a>
+                        </li>
+                        <li>2021.02.22</li>
+                        <li>
+                            <a href="#">더보기&nbsp;&nbsp;&nbsp;></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sec-nav info-nav">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="img-box">
+                                    <img src="./images/icon01.png" alt="icon01">
+                                </div>
+                                <p>고객센터</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="img-box">
+                                    <img src="./images/icon02.png" alt="icon02">
+                                </div>
+                                <p>
+                                    <span>자주 묻는 </span>질문
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="img-box">
+                                    <img src="./images/icon03.png" alt="icon03">
+                                </div>
+                                <p>1:1 문의</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="img-box">
+                                    <img src="./images/icon04.png" alt="icon04">
+                                </div>
+                                <p>
+                                    <span>단체/</span>대관문의
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="img-box">
+                                    <img src="./images/icon05.png" alt="icon05">
+                                </div>
+                                <p>
+                                    분실물<span>문의/접수</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="img-box">
+                                    <img src="./images/icon06.png" alt="icon06">
+                                </div>
+                                <p><span>더 부티크 프라이빗</span><br>대관예매</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
-        <footer class="footer"></footer>
+        <section class="ad03">
+            <div class="container">
+                <a href="#">
+                    <img src="./images/ad03.jpg" alt="광고03">
+                </a>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="container clearfix">
+                <div class="f-left">
+                    <ul class="f-nav clearfix">
+                        <li><a href="#">회사소개</a></li>
+                        <li class="m-hidden"><a href="#">인재채용</a></li>
+                        <li class="m-hidden"><a href="#">사회공헌</a></li>
+                        <li class="m-hidden"><a href="#">제휴/광고/부대사업문의</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li class="m-hidden"><a href="#">윤리경영</a></li>
+                    </ul>
+                    <div class="f-logo-n-address clearfix">
+                        <div class="f-logo">
+                            <a href="index.html">
+                                <span class="logo-top clearfix">
+                                    <span>M</span>
+                                    <span>E</span>
+                                    <span>G</span>
+                                    <span>A</span>
+                                    <span>B</span>
+                                    <span>O</span>
+                                    <span>X</span>
+                                </span>
+                                <span class="logo-bottom">
+                                    MEET PLAY SHARE
+                                </span>
+                            </a>
+                        </div>
+                        <address>
+                            서울특별시 마포구 월드컵로 240. 지상2층(성산동, 월드컵주경기장) ARS 1544-0700
+                            <br>
+                            대표자명 김진선, 개인정보보호책임자 조상연, 사업자등록번호 211-86-59478, 
+                            <br>
+                            통신판매업신고번호 제 833호
+                            <br>
+                            COPYRIGHT ⓒ MegaboxJoongAng, Inc. All rights reserved
+                        </address>
+                    </div>
+                </div>
+                <div class="f-right">
+                    <div class="theater-search clearfix">
+                        <i class="fas fa-search"></i>
+                        <span>극장찾기</span>
+                    </div>
+                    <div class="sns clearfix">
+                        <div class="box">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <div class="box">
+                            <i class="fab fa-facebook-square"></i>
+                        </div>
+                        <div class="box">
+                            <i class="fab fa-google-play"></i>
+                        </div>
+                        <div class="box">
+                            <i class="fab fa-instagram-square"></i>
+                        </div>
+                        <div class="box">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </section>
     
-
-    <script>
-        $(function(){
-            
-            // 팝업 종료 이벤트 및 쿠키 생성 여부
-            $('#cls-popup').on({
-                'click':function(){
-                    if($('#no-show').is(':checked')){
-                        $.cookie('Akc10L','cHl001',{expires:1})
-                    }
-                    $('#index-popup').css('display','none');
-                },
-            });
-
-            // 광고1 닫기
-            $('#cls-ad1').on({
-                'click':function(){
-                    $('#ad01').slideUp(300);
-                }
-            });
-
-            // 로그인창 호출
-            $('#call-login1,#call-login2').on({
-                'click':function(){
-                    $('#login').css('transform','translate(0,0)');
-                }
-            });
-
-            // 로그인창 닫기
-            $('#btn-close').on({
-                'click':function(){
-                    $('#login').css('transform','translate(100%,0)');
-                }
-            });
-
-            // 모바일 네비 열기
-            $('#btn-nav').on({
-                'click':function(){
-                    $('#m-nav').css('transform','translate(0,0)');
-                }
-            });
-
-            // 모바일 네비 닫기
-            $('#btn-close-nav').on({
-                'click':closeMoblieNav,
-            })
-            $(window).on({
-                'resize':closeMoblieNav,
-            })
-
-            function closeMoblieNav(){
-                $('#m-nav').css('transform','translate(-100%,0)')
-            }
-
-            // 박스오피스 슬라이더
-            const swiper = new Swiper('.swiper',{
-                loop:true,
-                breakpoints:{
-                    320:{
-                        slidesPerView:1.5,
-                        spaceBetween:16
-                    },
-                    768:{
-                        slidesPerView:2.5,
-                        spaceBetween:17
-                    },
-                    1024:{
-                        slidesPerView:3.5,
-                        spaceBetween:40
-                    },
-                }
-            })
-        })
-    </script>
+    <script src="./js/myfunction.js"></script>
 </body>
 </html>
